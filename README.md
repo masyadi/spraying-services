@@ -12,13 +12,33 @@ npm install @pakjarot/spraying-services
 
 ## Usage
 
+- Registrasikan didalam navigation
 
 ```js
-import { multiply } from '@pakjarot/spraying-services';
+import { registerSprayingServiceRoutes } from '@pakjarot/spraying-services';
 
 // ...
+<NavigationContainer>
+  <Stack.Navigator>
+    ...
 
-const result = await multiply(3, 7);
+    {registerSprayingServiceRoutes({Stack: Stack})}
+  </Stack.Navigator>
+</NavigationContainer>
+```
+
+- Gunakan navigation
+
+```js
+import { Routes } from '@pakjarot/spraying-services';
+
+// ...
+<Button
+  title="Jasa Semprot"
+  onPress={() => {
+    navigation.navigate(Routes.ScreenHome);
+  }}
+/>
 ```
 
 

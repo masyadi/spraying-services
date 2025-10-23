@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "description": "Library for srpaying services",
   "main": "./lib/module/index.js",
+  "module": "lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
   "exports": {
     ".": {
-      "source": "./src/index.tsx",
+      "source": "./src/index.js",
       "types": "./lib/typescript/src/index.d.ts",
       "default": "./lib/module/index.js"
     },
@@ -66,6 +67,8 @@
     "@evilmartians/lefthook": "^1.12.3",
     "@react-native/babel-preset": "0.81.1",
     "@react-native/eslint-config": "^0.81.1",
+    "@react-navigation/native": "^6.1.18",
+    "@react-navigation/native-stack": "^6.11.0",
     "@release-it/conventional-changelog": "^10.0.1",
     "@types/jest": "^29.5.14",
     "@types/react": "^19.1.12",
@@ -75,16 +78,30 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "jest": "^29.7.0",
+    "moment": "^2.30.1",
     "prettier": "^3.6.2",
     "react": "19.1.0",
     "react-native": "0.81.5",
-    "react-native-builder-bob": "^0.40.13",
+    "react-native-builder-bob": "^0.20.0",
+    "react-native-geolocation-service": "^5.3.1",
+    "react-native-maps": "^1.25.3",
+    "react-native-modal-datetime-picker": "^18.0.0",
+    "react-native-vector-icons": "^10.3.0",
     "release-it": "^19.0.4",
     "typescript": "^5.9.2"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
+    "@react-native-community/datetimepicker": ">=8.4.4",
+    "@react-navigation/native": ">=6.0.0",
+    "@react-navigation/native-stack": ">=6.0.0",
+    "moment": "*",
+    "react": ">=18.0.0",
+    "react-native": ">=0.72.0",
+    "react-native-flash-message": ">=0.4.2",
+    "react-native-geolocation-service": ">=3.0.0",
+    "react-native-maps": ">=1.25.3",
+    "react-native-modal-datetime-picker": ">=18.0.0",
+    "react-native-vector-icons": ">=10.3.0"
   },
   "workspaces": [
     "example"
@@ -136,12 +153,6 @@
         "module",
         {
           "esm": true
-        }
-      ],
-      [
-        "typescript",
-        {
-          "project": "tsconfig.build.json"
         }
       ]
     ]
